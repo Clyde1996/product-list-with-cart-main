@@ -1,5 +1,5 @@
 *{
-    font-family: 'calibri', 'Times New Roman', Times, serif;
+    font-family: 'Red Hat Text', sans-serif;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -22,7 +22,7 @@ aside {
 } 
 
 h1 {
-    font-size: 50px;
+    font-size: 40px;
     padding: 20px 74px;
 }
 
@@ -45,13 +45,24 @@ h1 {
     border-radius: 3%;
 }
 
+.card p{
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.card h2{
+    font-weight: 700;
+    font-size: 16px;
+    padding: 5px 0;
+}
+
 .card-button {
-    width: 50%;
+    width: 55%;
     padding: 10px 20px;
     border: 1px solid black;
     border-radius: 50px;
     position: relative;
-    left: 75px;
+    left: 70px;
     bottom: 22px;
     background-color: white;
     cursor: pointer;
@@ -70,15 +81,16 @@ h1 {
 }
 
 .card-button strong {
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: 600;
     background: white;
 }
-
-
-
 
 .card-price{
     color: #C73B0F;
 }
 
+/* .cart{
+    background: white;
+} */
 
