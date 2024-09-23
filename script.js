@@ -3,64 +3,59 @@ let cart = [];
 let total = 0;
 
 // Function to add an item to the cart
-function addToCart(itemName, itemPrice) {
-    // Check if the item already exists in the cart
+function addToCart(itemName, itemPrice, buttonElement) {
     const existingItem = cart.find(item => item.name === itemName);
 
     if (existingItem) {
-        // If the item is already in the cart, increase its quantity
         existingItem.quantity++;
     } else {
-        // If the item is not in the cart, add it with a quantity of 1
         cart.push({ name: itemName, price: itemPrice, quantity: 1 });
     }
 
-    // Update the cart display
     displayCart();
+
+    // Hide "Add to Cart" button and show quantity controls
+    buttonElement.style.display = 'none';
+    const cartControls = buttonElement.parentElement.querySelector('.cart-controls');
+    cartControls.style.display = 'flex';
+
+    // Update the displayed quantity
+    const quantityElement = document.getElementById(`quantity-${itemName}`);
+    quantityElement.innerText = existingItem ? existingItem.quantity : 1;
 }
 
 // Function to remove an item from the cart
 function removeFromCart(itemName) {
-    // Find the item in the cart
     const itemIndex = cart.findIndex(item => item.name === itemName);
-
     if (itemIndex > -1) {
-        // Decrease the item's quantity if more than one, or remove it if it's the last one
+        // Decrease the item's quantity or remove it if it's the last one
         if (cart[itemIndex].quantity > 1) {
             cart[itemIndex].quantity--;
         } else {
             cart.splice(itemIndex, 1); // Remove item from cart if its quantity is 1
         }
-
-        // Update the cart display
         displayCart();
     }
 }
 
 // Function to display the cart contents and the total price
 function displayCart() {
-    // Sélection des éléments HTML où les articles et le total du panier seront affichés
     const emptyCart = document.getElementById('empty-cart');
     const cartItems = document.getElementById('cart-items');
     const cartTotal = document.getElementById('cart-total');
-    const cartIcons = document.getElementById('cart-icons'); // Get the icons container
+    const cartIcons = document.getElementById('cart-icons');
     
-     // Vérifie si le panier est vide
     if (cart.length === 0) {
-        // Si le panier est vide, affiche un message et fixe le total à $0.00
         emptyCart.style.display = 'block'; // Show empty cart illustration
         cartItems.innerHTML = 'Your Cart is empty.';
+        cartTotal.innerHTML = `<span class="order-total-price">$0.00</span>`; // Reset total to $0.00
         cartIcons.style.display = 'none'; // Hide icons when cart is empty
     } else {
-        let itemsHTML = '';  // Variable pour accumuler le HTML des articles du panier
-        total = 0; // Réinitialise le total avant de recalculer
+        let itemsHTML = '';
+        total = 0; // Reset total before recalculating
 
-        // Parcourt chaque article dans le panier
         cart.forEach(item => {
-            // Calcule le prix total pour cet article (quantité x prix unitaire)
             const itemTotalPrice = (item.price * item.quantity).toFixed(2);
-            
-            // Crée le HTML pour chaque article du panier
             itemsHTML += `
                 <div class="cart-item">
                     <div class="cart-item-info">
@@ -78,24 +73,45 @@ function displayCart() {
                     </button>
                 </div>
             `;
-            // Ajoute le prix total de cet article au total global du panier
-            total += item.price * item.quantity;
+            total += item.price * item.quantity; // Calculate total price
         });
 
-        // Injecte le HTML des articles dans l'élément "cart-items"
         cartItems.innerHTML = itemsHTML;
-
-        // Met à jour l'affichage du total global dans l'élément "cart-total"
-        cartTotal.innerHTML = `
-            <div class="order-total-detials">
-                <span class="order-total-label">Order Total</span> 
-                <span class="order-total-price">$${total.toFixed(2)}</span>
-            </div>
-        `;
+        cartTotal.innerHTML = `<div class="order-total-details">
+                                   <span class="order-total-label">Order Total</span> 
+                                   <span class="order-total-price">$${total.toFixed(2)}</span>
+                               </div>`;
 
         emptyCart.style.display = 'none'; // Hide empty cart illustration
         cartIcons.style.display = 'block'; // Show icons when cart has items
     }
 }
 
+// Function to update the quantity of items in the cart
+function updateQuantity(productName, change) {
+    // Update the quantity in the cart array and display the updated cart
+    const quantityElement = document.getElementById(`quantity-${productName}`);
+    let currentQuantity = parseInt(quantityElement.innerText) || 0;
 
+    currentQuantity += change;
+    if (currentQuantity < 0) currentQuantity = 0;
+
+    quantityElement.innerText = currentQuantity;
+
+    if (currentQuantity > 0) {
+        const item = cart.find(item => item.name === productName);
+        if (item) {
+            item.quantity = currentQuantity; // Update existing item quantity
+        } else {
+            addToCart(productName, 6.50, quantityElement.parentElement.previousElementSibling); // Replace with the correct price
+        }
+    } else {
+        removeFromCart(productName);
+        const cartControls = quantityElement.parentElement;
+        cartControls.style.display = 'none'; // Hide controls if no items
+        const addToCartButton = cartControls.previousElementSibling;
+        addToCartButton.style.display = 'block'; // Show "Add to Cart" button again
+    }
+
+    displayCart(); // Update the cart display
+}

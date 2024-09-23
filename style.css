@@ -49,6 +49,8 @@ h1 {
     border-radius: 3%;
 }
 
+
+
 .card p{
     font-weight: 400;
     font-size: 16px;
@@ -115,7 +117,7 @@ h1 {
 .cart h3{
     display: flex;
     align-items: flex-start;
-    color: #C73B0F;
+    color: #C83B0E;
     font-size: 25px;
     padding: 10px 0;
 }
@@ -210,7 +212,7 @@ h1 {
     border: 1.5px solid black;
 }
 
-.order-total-detials{
+.order-total-details{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -263,4 +265,47 @@ h1 {
     background: whitesmoke;
 }
 
+
+/*************************
+        cart-controls 
+*************************/
+
+.cart-controls {
+    width: 55%;
+    padding: 10px 15px;
+    border-radius: 50px;
+    position: relative;
+    left: 70px;
+    bottom: 22px;
+    background-color: #C83B0E;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center; /* Vertical alignment */
+    justify-content: space-between; /* Horizontal alignment */
+    gap: 10px; /* Space between icon and text */
+
+}
+
+.cart-controls button {
+    width: 25px;
+    height: 25px;
+    background-color: #C83B0E;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.cart-controls .quantity {
+    font-size: 16px;
+    font-weight: bold;
+    background: #C83B0E;
+    color: white;
+}
+
+.highlight-border {
+    border: 2px solid red; /* Red border */
+    border-radius: 5px;    /* Optional: rounded corners */
+}
 

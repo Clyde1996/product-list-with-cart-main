@@ -28,10 +28,17 @@
 
         <div class="card">
           <img src="./assets/images/image-waffle-desktop.jpg" alt="waffle-with-berries">
-          <button class="card-button" onclick="addToCart('Waffle with Berries', 6.50)"> 
+          <button class="card-button" onclick="addToCart('Waffle with Berries', 6.50, this)"> 
             <object data="./assets/images/icon-add-to-cart.svg" type="image/svg+xml"></object>
             <strong>Add to Cart</strong>
           </button>
+
+          <div class="cart-controls" style="display: none;">
+            <button class="decrease" onclick="updateQuantity('Waffle with Berries', -1)">-</button>
+            <span class="quantity" id="quantity-Waffle with Berries">0</span>
+            <button class="increase" onclick="updateQuantity('Waffle with Berries', 1)">+</button>
+          </div>
+
           <p>Waffle</p>
           <h2>Waffle with Berries</h2>
           <p class="card-price">6.50</p>
@@ -39,21 +46,35 @@
 
         <div class="card">
           <img src="./assets/images/image-creme-brulee-desktop.jpg" alt="creme-brulee">
-          <button class="card-button" onclick="addToCart('Vanilla Bean Crème Brûlée', 7.00)"> 
-            <object data="./assets/images/icon-add-to-cart.svg" type="image/svg+xml"></object>
-            <strong>Add to Cart</strong>
+          <button class="card-button" onclick="addToCart('Vanilla Bean Crème Brûlée', 7.00, this)"> 
+              <object data="./assets/images/icon-add-to-cart.svg" type="image/svg+xml"></object>
+              <strong>Add to Cart</strong>
           </button>
+      
+          <div class="cart-controls" style="display: none;">
+              <button class="decrease" onclick="updateQuantity('Vanilla Bean Crème Brûlée', -1)">-</button>
+              <span class="quantity" id="quantity-Vanilla Bean Crème Brûlée">0</span>
+              <button class="increase" onclick="updateQuantity('Vanilla Bean Crème Brûlée', 1)">+</button>
+          </div>
+      
           <p>Crème Brûlée</p>
           <h2>Vanilla Bean Crème Brûlée</h2>
           <p class="card-price">7.00</p>
-        </div>
+      </div>
 
         <div class="card">
           <img src="./assets/images/image-macaron-desktop.jpg" alt="mix-of-macarons">
-          <button class="card-button" onclick="addToCart('Macaron Mix of Five', 8.00)"> 
+          <button class="card-button" onclick="addToCart('Macaron Mix of Five', 8.00, this)"> 
             <object data="./assets/images/icon-add-to-cart.svg" type="image/svg+xml"></object>
             <strong>Add to Cart</strong>
           </button>
+
+          <div class="cart-controls" style="display: none;">
+            <button class="decrease" onclick="updateQuantity('Macaron Mix of Five', -1)">-</button>
+            <span class="quantity" id="quantity-Macaron Mix of Five">0</span>
+            <button class="increase" onclick="updateQuantity('Macaron Mix of Five', 1)">+</button>
+          </div>
+          
           <p>Macaron</p>
           <h2>Macaron Mix of Five</h2>
           <p class="card-price">8.00</p>
@@ -61,10 +82,17 @@
 
         <div class="card">
           <img src="./assets/images/image-tiramisu-desktop.jpg" alt="tiramisu">
-          <button class="card-button" onclick="addToCart('Classic Tiramisu', 5.50)"> 
+          <button class="card-button" onclick="addToCart('Classic Tiramisu', 5.50, this)"> 
             <object data="./assets/images/icon-add-to-cart.svg" type="image/svg+xml"></object>
             <strong>Add to Cart</strong>
           </button>
+          
+          <div class="cart-controls" style="display: none;">
+            <button class="decrease" onclick="updateQuantity('Classic Tiramisu', -1)">-</button>
+            <span class="quantity" id="quantity-Classic Tiramisu">0</span>
+            <button class="increase" onclick="updateQuantity('Classic Tiramisu', 1)">+</button>
+          </div>
+          
           <p>Tiramisu</p>
           <h2>Classic Tiramisu</h2>
           <p class="card-price">5.50</p>
@@ -72,10 +100,17 @@
 
         <div class="card">
           <img src="./assets/images/image-baklava-desktop.jpg" alt="pistachio-baklava">
-          <button class="card-button" onclick="addToCart('Pistachio Baklava', 4.00)"> 
+          <button class="card-button" onclick="addToCart('Pistachio Baklava', 4.00, this)"> 
             <object data="./assets/images/icon-add-to-cart.svg" type="image/svg+xml"></object>
             <strong>Add to Cart</strong>
           </button>
+                    
+          <div class="cart-controls" style="display: none;">
+            <button class="decrease" onclick="updateQuantity('Pistachio Baklava', -1)">-</button>
+            <span class="quantity" id="quantity-Pistachio Baklava">0</span>
+            <button class="increase" onclick="updateQuantity('Pistachio Baklava', 1)">+</button>
+          </div>
+          
           <p>Baklava</p>
           <h2>Pistachio Baklava</h2>
           <p class="card-price">4.00</p>
@@ -83,10 +118,17 @@
 
         <div class="card">
           <img src="./assets/images/image-meringue-desktop.jpg" alt="lemon-meringue-pie">
-          <button class="card-button" onclick="addToCart('Lemon Meringue Pie', 5.00)"> 
+          <button class="card-button" onclick="addToCart('Lemon Meringue Pie', 5.00, this)"> 
             <object data="./assets/images/icon-add-to-cart.svg" type="image/svg+xml"></object>
             <strong>Add to Cart</strong>
           </button>
+                    
+          <div class="cart-controls" style="display: none;">
+            <button class="decrease" onclick="updateQuantity('Lemon Meringue Pie', -1)">-</button>
+            <span class="quantity" id="quantity-Lemon Meringue Pie">0</span>
+            <button class="increase" onclick="updateQuantity('Lemon Meringue Pie', 1)">+</button>
+          </div>
+          
           <p>Pie</p>
           <h2>Lemon Meringue Pie</h2>
           <p class="card-price">5.00</p>
@@ -94,10 +136,17 @@
 
         <div class="card">
           <img src="./assets/images/image-cake-desktop.jpg" alt="red-valvet-cake">
-          <button class="card-button" onclick="addToCart('Red Velvet Cake', 4.50)">
+          <button class="card-button" onclick="addToCart('Red Velvet Cake', 4.50, this)">
             <object data="./assets/images/icon-add-to-cart.svg" type="image/svg+xml"></object> 
             <strong>Add to Cart</strong>
           </button>
+                     
+          <div class="cart-controls" style="display: none;">
+            <button class="decrease" onclick="updateQuantity('Red Velvet Cake', -1)">-</button>
+            <span class="quantity" id="quantity-Red Velvet Cake">0</span>
+            <button class="increase" onclick="updateQuantity('Red Velvet Cake', 1)">+</button>
+          </div>
+          
           <p>Cake</p>
           <h2>Red Velvet Cake</h2>
           <p class="card-price">4.50</p>
@@ -105,10 +154,17 @@
 
         <div class="card">
           <img src="./assets/images/image-brownie-desktop.jpg" alt="caramel-brownie">
-          <button class="card-button" onclick="addToCart('Salted Caramel Brownie', 4.50)"> 
+          <button class="card-button" onclick="addToCart('Salted Caramel Brownie', 4.50, this)"> 
             <object data="./assets/images/icon-add-to-cart.svg" type="image/svg+xml"></object>
             <strong>Add to Cart</strong>
           </button>
+                      
+          <div class="cart-controls" style="display: none;">
+            <button class="decrease" onclick="updateQuantity('Salted Caramel Brownie', -1)">-</button>
+            <span class="quantity" id="quantity-Salted Caramel Brownie">0</span>
+            <button class="increase" onclick="updateQuantity('Salted Caramel Brownie', 1)">+</button>
+          </div>
+          
           <p>Brownie</p>
           <h2>Salted Caramel Brownie</h2>
           <p class="card-price">4.50</p>
@@ -116,10 +172,17 @@
 
         <div class="card">
           <img src="./assets/images/image-panna-cotta-desktop.jpg" alt="panna-cotta">
-          <button class="card-button" onclick="addToCart('Vanilla Panna Cotta', 6.50)">
+          <button class="card-button" onclick="addToCart('Vanilla Panna Cotta', 6.50, this)">
             <object data="./assets/images/icon-add-to-cart.svg" type="image/svg+xml"></object>
             <strong>Add to Cart</strong>
           </button>
+
+          <div class="cart-controls" style="display: none;">
+            <button class="decrease" onclick="updateQuantity('Vanilla Panna Cotta', -1)">-</button>
+            <span class="quantity" id="quantity-Vanilla Panna Cotta">0</span>
+            <button class="increase" onclick="updateQuantity('Vanilla Panna Cotta', 1)">+</button>
+          </div>
+
           <p>Panna Cotta</p>
           <h2>Vanilla Panna Cotta</h2>
           <p class="card-price">6.50</p>
