@@ -28,7 +28,7 @@
 
         <div class="card">
           <img src="./assets/images/image-waffle-desktop.jpg" alt="waffle-with-berries">
-          <button class="card-button" onclick="addToCart('Waffle with Berries', 6.50, this)"> 
+          <button class="card-button" onclick="addToCart('Waffle with Berries', 6.50, this,'./assets/images/image-waffle-desktop.jpg')"> 
             <object data="./assets/images/icon-add-to-cart.svg" type="image/svg+xml"></object>
             <strong>Add to Cart</strong>
           </button>
@@ -46,7 +46,7 @@
 
         <div class="card">
           <img src="./assets/images/image-creme-brulee-desktop.jpg" alt="creme-brulee">
-          <button class="card-button" onclick="addToCart('Vanilla Bean Crème Brûlée', 7.00, this)"> 
+          <button class="card-button" onclick="addToCart('Vanilla Bean Crème Brûlée', 7.00, this, './assets/images/image-creme-brulee-desktop.jpg' )"> 
               <object data="./assets/images/icon-add-to-cart.svg" type="image/svg+xml"></object>
               <strong>Add to Cart</strong>
           </button>
@@ -64,7 +64,7 @@
 
         <div class="card">
           <img src="./assets/images/image-macaron-desktop.jpg" alt="mix-of-macarons">
-          <button class="card-button" onclick="addToCart('Macaron Mix of Five', 8.00, this)"> 
+          <button class="card-button" onclick="addToCart('Macaron Mix of Five', 8.00, this, './assets/images/image-macaron-desktop.jpg' )"> 
             <object data="./assets/images/icon-add-to-cart.svg" type="image/svg+xml"></object>
             <strong>Add to Cart</strong>
           </button>
@@ -82,7 +82,7 @@
 
         <div class="card">
           <img src="./assets/images/image-tiramisu-desktop.jpg" alt="tiramisu">
-          <button class="card-button" onclick="addToCart('Classic Tiramisu', 5.50, this)"> 
+          <button class="card-button" onclick="addToCart('Classic Tiramisu', 5.50, this,'./assets/images/image-tiramisu-desktop.jpg' )"> 
             <object data="./assets/images/icon-add-to-cart.svg" type="image/svg+xml"></object>
             <strong>Add to Cart</strong>
           </button>
@@ -100,7 +100,7 @@
 
         <div class="card">
           <img src="./assets/images/image-baklava-desktop.jpg" alt="pistachio-baklava">
-          <button class="card-button" onclick="addToCart('Pistachio Baklava', 4.00, this)"> 
+          <button class="card-button" onclick="addToCart('Pistachio Baklava', 4.00, this, './assets/images/image-baklava-desktop.jpg')"> 
             <object data="./assets/images/icon-add-to-cart.svg" type="image/svg+xml"></object>
             <strong>Add to Cart</strong>
           </button>
@@ -118,7 +118,7 @@
 
         <div class="card">
           <img src="./assets/images/image-meringue-desktop.jpg" alt="lemon-meringue-pie">
-          <button class="card-button" onclick="addToCart('Lemon Meringue Pie', 5.00, this)"> 
+          <button class="card-button" onclick="addToCart('Lemon Meringue Pie', 5.00, this, './assets/images/image-meringue-desktop.jpg' )"> 
             <object data="./assets/images/icon-add-to-cart.svg" type="image/svg+xml"></object>
             <strong>Add to Cart</strong>
           </button>
@@ -136,7 +136,7 @@
 
         <div class="card">
           <img src="./assets/images/image-cake-desktop.jpg" alt="red-valvet-cake">
-          <button class="card-button" onclick="addToCart('Red Velvet Cake', 4.50, this)">
+          <button class="card-button" onclick="addToCart('Red Velvet Cake', 4.50, this, './assets/images/image-cake-desktop.jpg')">
             <object data="./assets/images/icon-add-to-cart.svg" type="image/svg+xml"></object> 
             <strong>Add to Cart</strong>
           </button>
@@ -154,7 +154,7 @@
 
         <div class="card">
           <img src="./assets/images/image-brownie-desktop.jpg" alt="caramel-brownie">
-          <button class="card-button" onclick="addToCart('Salted Caramel Brownie', 4.50, this)"> 
+          <button class="card-button" onclick="addToCart('Salted Caramel Brownie', 4.50, this, './assets/images/image-brownie-desktop.jpg')"> 
             <object data="./assets/images/icon-add-to-cart.svg" type="image/svg+xml"></object>
             <strong>Add to Cart</strong>
           </button>
@@ -172,21 +172,24 @@
 
         <div class="card">
           <img src="./assets/images/image-panna-cotta-desktop.jpg" alt="panna-cotta">
-          <button class="card-button" onclick="addToCart('Vanilla Panna Cotta', 6.50, this)">
-            <object data="./assets/images/icon-add-to-cart.svg" type="image/svg+xml"></object>
-            <strong>Add to Cart</strong>
+          <button class="card-button" onclick="addToCart('Vanilla Panna Cotta', 6.50, this, './assets/images/image-panna-cotta-desktop.jpg')">
+              <object data="./assets/images/icon-add-to-cart.svg" type="image/svg+xml"></object>
+              <strong>Add to Cart</strong>
           </button>
-
+      
           <div class="cart-controls" style="display: none;">
-            <button class="decrease" onclick="updateQuantity('Vanilla Panna Cotta', -1)">-</button>
-            <span class="quantity" id="quantity-Vanilla Panna Cotta">0</span>
-            <button class="increase" onclick="updateQuantity('Vanilla Panna Cotta', 1)">+</button>
+              <button class="decrease" onclick="updateQuantity('Vanilla Panna Cotta', -1)">-</button>
+              <span class="quantity" id="quantity-Vanilla Panna Cotta">0</span>
+              <button class="increase" onclick="updateQuantity('Vanilla Panna Cotta', 1)">+</button>
           </div>
-
+      
           <p>Panna Cotta</p>
           <h2>Vanilla Panna Cotta</h2>
           <p class="card-price">6.50</p>
-        </div>
+      </div>
+      
+
+        
         
       </div>
     </main>
@@ -216,6 +219,27 @@
           <!-- Button -->
           <button>Confirm Order</button>
         </div>
+
+        <!-- Order Confirmation Modal -->
+        <div id="order-modal" class="modal" style="display: none;">
+          <div class="modal-content">
+            
+            <img src="./assets/images/icon-order-confirmed.svg" alt="order-confirmed" class="order-confirmed">
+            <span class="close-btn">&times;</span>
+            <h2>Order Confirmed</h2>
+            <span class="txt-order-confirmed"><p>We hope you enjoy your food!</p></span>
+            
+            <div id="order-details"></div>
+            
+            <div class="order-summary">
+              <p>Order Total</p>
+              <span id="modal-total-price">$0.00</span>
+            </div>
+            
+            <button id="new-order-btn">Start New Order</button>
+          </div>
+        </div>
+
       </div>
     </aside>
 
