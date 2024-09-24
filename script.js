@@ -144,9 +144,10 @@ document.querySelector('#cart-icons button').addEventListener('click', function(
         // Ajouter l'image avec le nom et le prix
         itemsHTML += `
             <div class="modal-item" style="margin-bottom: 10px; display: flex; align-items: center;">
+                
                 <img src="${item.image}" alt="${item.name}" class="modal-item-image" style="width: 50px; height: 50px; object-fit: cover; margin-right: 10px;">
                 <div style="flex-grow: 1;">  
-                    <strong>${item.name}</strong> 
+                    <strong class="itemName-modal-item">${item.name}</strong> 
                     <div class="show-modal-item" style="display: flex; justify-content: space-between; align-items: center;">
                         <span>
                             <span class="item-quantity-modal-item">${item.quantity}x</span> @ $${item.price.toFixed(2)}

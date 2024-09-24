@@ -382,18 +382,26 @@ h1 {
 
 #new-order-btn {
     margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #4CAF50;
+    padding: 15px 170px;
+    background-color: #C83B0E;
     color: white;
+    font-size: 16px;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
+}
+
+#new-order-btn:hover{
+    color: #f0f0f0;
+    
+
 }
 
 .modal-item {
     display: flex;
     align-items: center;
     margin-bottom: 10px; /* Espacement entre les éléments */
+    border-bottom: 2px solid #f0f0f0; 
 }
 
 .show-modal-item {
@@ -401,7 +409,7 @@ h1 {
     justify-content: space-between; /* Espace entre les éléments */
     align-items: center;           /* Centre verticalement */
     width: 100%;                   /* Prend toute la largeur disponible */
-    padding: 20px 20px 20px 0;
+    padding: 5px 20px 0 0;
 }
 
 .itemTotalPrice-modal-item{
@@ -424,4 +432,24 @@ h1 {
     padding: 0 10px 0 0;
     font-weight: bold;
 }
+
+.itemName-modal-item{
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+#modal-total-price{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.modal-item:first-of-type {
+    border-radius: 5px;
+}
+
+.close-btn{
+    background: white;
+}
+
 
