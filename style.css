@@ -244,9 +244,10 @@ h1 {
     color: white;
     border: none;
     cursor: pointer;
-    padding: 14px 116px;
+    padding: 14px 110px;
     border-radius: 50px;
     font-size: 16px;
+    font-weight: bold;
 }
 
 /* .icon-carbon-neutral span{
@@ -320,31 +321,39 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* Assure que le modal est centré à la fois horizontalement et verticalement */
 }
 
-.order-confirmed{
-    display: flex;
-    align-items: flex-start;
-    padding: 20px 0;
-}
-
-/* Modal content */
-/* Modal content */
 .modal-content {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
     width: 80%;
-    max-width: 500px;
+    max-width: 500px; /* Taille maximale pour les grands écrans */
     text-align: center;
     position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute un peu d'ombre pour l'effet visuel */
+    
+    /* S'assure que le modal est bien centré même s'il dépasse */
+    max-height: 90vh;  /* Limite la hauteur à 90% de la vue */
+    overflow-y: auto; /* Permet le défilement si le contenu dépasse la hauteur disponible */
 }
 
-/* Ajout d'un style pour les détails de commande */
-#order-details {
-    max-height: 300px; /* Limite la hauteur des détails de commande */
-    overflow-y: auto;  /* Active le défilement si le contenu dépasse */
+/* Bouton de fermeture du modal */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
 }
+
+/* Ajoute un défilement pour les détails de la commande s'ils sont trop longs */
+#order-details {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
 
 /* Garde les autres styles déjà définis */
 .modal-content h2 {
@@ -354,19 +363,19 @@ h1 {
     background: white;
 }
 
+
+.order-confirmed{
+    display: flex;
+    align-items: flex-start;
+    padding: 20px 0;
+}
+
+
 .txt-order-confirmed p {
     padding: 15px 0;
     font-weight: 400;
 }
 
-/* Close button */
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    font-size: 24px;
-}
 
 .order-summary {
     padding: 20px;
@@ -410,6 +419,7 @@ h1 {
     align-items: center;           /* Centre verticalement */
     width: 100%;                   /* Prend toute la largeur disponible */
     padding: 5px 20px 0 0;
+
 }
 
 .itemTotalPrice-modal-item{
@@ -425,6 +435,7 @@ h1 {
     margin-right: 10px;
     margin: 20px;
     border-radius: 5px;
+
 }
 
 .item-quantity-modal-item{
@@ -451,5 +462,190 @@ h1 {
 .close-btn{
     background: white;
 }
+
+
+
+/***************************************************************************************************/
+
+/********************************** Mobile Mode *****************************************************/
+
+/**************************************************************************************************/
+
+
+
+@media (min-width: 1200px) {
+    .card .card-button{
+        padding: 10px 8px;
+        left: 55px;
+    }
+
+    .cart-controls{
+        left: 55px;
+    }
+
+    #cart-icons button{
+        padding: 14px 70px;
+        font-size: 15px;
+    }
+
+    .card-button strong{
+        font-size: 13px;
+    }
+
+    
+    
+}
+
+
+
+
+@media (max-width: 1024px) { 
+    
+    /* Pour les tablettes */
+
+    .card{
+        width : 33%;
+        padding: 15px;
+    }
+
+    /*Panier*/
+    .cart{
+        margin: 50px 20px auto 10px;
+        padding: 15px;
+    }
+
+    #cart-icons button{
+        padding: 14px 60px;
+    }
+
+    h1{
+        padding: 20px 15px;
+    }
+
+    .contenu{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cart-item-unit-price{
+        padding: 5px 20px;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    
+    /* Pour les smartphones */ 
+
+    .card-button {
+        left: 52px;
+        padding: 10px 7px;
+    }
+
+    .card-button strong{
+        font-size: 13px;
+    }
+
+    .cart-controls{
+        left: 55px;
+    }
+
+    .element.style{
+
+    }
+
+    .card-button{
+        /* Flexbox for alignment */
+        display: revert;
+        display: flex;
+        align-items: center; /* Vertical alignment */
+        justify-content: center; /* Horizontal alignment */
+        gap: 10px; /* Space between icon and text */
+            
+    }
+
+    #cart-icons button{
+        padding: 14px 298px;
+        
+    }
+
+    
+
+}
+
+
+
+
+
+@media (max-width: 480px) { 
+    /* Pour les petits smartphones */ 
+
+    .card{
+        width : 50%;
+        padding: 15px;
+    }
+
+    #cart-icons button{
+        padding: 14px 155px;
+    }
+
+    .card-button {
+        left: 50px;
+        padding: 8px 5px;
+    }
+
+    #new-order-btn{
+        padding: 15px 113px;
+    }
+
+    .cart-controls{
+        left: 50px;
+    }
+}
+
+@media (max-width: 376px){
+    /*Mobile: */
+
+    .card {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .card-button{
+        left: 80px;
+    }
+
+    .cart-controls {
+        left: 80px;
+    }
+
+    .cart {
+        margin: 50px 10px auto 10px;
+        padding: 15px;
+    }
+
+    #cart-icons button {
+        padding: 14px 107px;
+    }
+
+    #new-order-btn{
+        padding: 15px 70px;
+    }
+
+    .modal-content{
+        width: 100%;
+    }
+
+    .modal-content h2 {
+        text-align: left;
+    }
+
+    .attribution{
+        padding: 10px;
+        text-align: center;
+    }
+
+}   
 
 

@@ -143,12 +143,12 @@ document.querySelector('#cart-icons button').addEventListener('click', function(
         const itemTotalPrice = (item.price * item.quantity).toFixed(2);
         // Ajouter l'image avec le nom et le prix
         itemsHTML += `
-            <div class="modal-item" style="margin-bottom: 10px; display: flex; align-items: center;">
+            <div class="modal-item">
                 
-                <img src="${item.image}" alt="${item.name}" class="modal-item-image" style="width: 50px; height: 50px; object-fit: cover; margin-right: 10px;">
+                <img src="${item.image}" alt="${item.name}" class="modal-item-image" >
                 <div style="flex-grow: 1;">  
                     <strong class="itemName-modal-item">${item.name}</strong> 
-                    <div class="show-modal-item" style="display: flex; justify-content: space-between; align-items: center;">
+                    <div class="show-modal-item" >
                         <span>
                             <span class="item-quantity-modal-item">${item.quantity}x</span> @ $${item.price.toFixed(2)}
                         </span>  
@@ -210,4 +210,7 @@ document.getElementById('new-order-btn').addEventListener('click', function() {
     // Fermer la modale
     document.getElementById('order-modal').style.display = 'none';
 });
+
+
+// .. // Force le rechargement complet sans utiliser le cache
 
